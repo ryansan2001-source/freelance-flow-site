@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- Freelance Flow support page. Same styling tokens as index.html, trimmed down. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freelance Flow: Support</title>
+  <meta name="description" content="Help and support for Freelance Flow, the private tax-savings tracker for freelancers. Contact, FAQ, and privacy." />
+  <link rel="icon" href="assets/icon.png" />
+  <style>
+    :root{
+      --blue:#0f80f8;--blue-deep:#0a63c8;--blue-soft:#eef5ff;
+      --ink:#1b2430;--muted:#5a6675;--line:#e2e8f0;--bg:#fff;
+      --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 24px}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;max-width:720px;margin:0 auto;padding-left:24px;padding-right:24px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:19px;text-decoration:none;color:var(--ink)}
+    .brand img{width:34px;height:34px;border-radius:9px}
+    nav a.back{color:var(--muted);text-decoration:none;font-size:15px}
+    nav a.back:hover{color:var(--ink)}
+    header.page{padding:40px 0 8px}
+    header.page h1{font-size:34px;letter-spacing:-0.02em;margin-bottom:8px}
+    header.page p{color:var(--muted);font-size:17px}
+    section{padding:28px 0;border-bottom:1px solid var(--line)}
+    section h2{font-size:21px;margin-bottom:14px}
+    .q{font-weight:600;margin-top:18px;margin-bottom:4px}
+    .a{color:var(--muted)}
+    a.link{color:var(--blue-deep);font-weight:600}
+    .contact{background:var(--blue-soft);border-radius:16px;padding:24px;margin-top:8px}
+    .contact a{color:var(--blue-deep);font-weight:600;text-decoration:none}
+    .disclaimer{color:var(--muted);font-size:14px}
+    footer{padding:32px 0;color:var(--muted);font-size:14px;text-align:center}
+    footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="Freelance Flow icon" />Freelance Flow</a>
+    <a class="back" href="index.html">← Back to home</a>
+  </nav>
+
+  <div class="wrap">
+    <header class="page">
+      <h1>Support</h1>
+      <p>Real help from the person who made Freelance Flow. Most questions get a reply within a day or two.</p>
+    </header>
+
+    <section>
+      <h2>Get in touch</h2>
+      <div class="contact">
+        Email <a href="mailto:rylumcgee@gmail.com">rylumcgee@gmail.com</a> with anything:
+        a bug, a feature idea, or a question. Telling me your iPhone model and iOS version
+        helps me sort things out faster.
+      </div>
+    </section>
+
+    <section>
+      <h2>Frequently asked</h2>
+
+      <p class="q">Do I need an account?</p>
+      <p class="a">No. Freelance Flow never asks you to sign up. Your income, expenses, and
+      receipts live on your device.</p>
+
+      <p class="q">Where is my data stored?</p>
+      <p class="a">On your phone. Freelance Flow has no server and collects nothing. If you turn on
+      iCloud sync in Settings, your data backs up and syncs across your devices through your
+      <em>own</em> private iCloud. I never see it.</p>
+
+      <p class="q">How does the tax set-aside work?</p>
+      <p class="a">You pick a tax rate (a slider from 10–40%; the default 30% reflects the common
+      freelancer rule of thumb). Freelance Flow applies it to your income to estimate what to set
+      aside — loosely covering self-employment tax (~15.3%) plus federal income tax. It's a
+      cushion, <strong>not tax advice</strong> — check with a qualified tax professional or tax
+      software if you're unsure.</p>
+
+      <p class="q">Can I snap receipts?</p>
+      <p class="a">Yes. Add a photo to any expense and Freelance Flow reads the amount and date from
+      it, on device. Photos stay on your phone (and in your own iCloud if sync is on).</p>
+
+      <p class="q">Which currencies are supported?</p>
+      <p class="a">USD, EUR, GBP, CAD, AUD, SEK, NOK, and JPY. Pick yours in Settings and it's used
+      everywhere in the app.</p>
+
+      <p class="q">How do I turn on iCloud sync?</p>
+      <p class="a">Open Settings in Freelance Flow and toggle <strong>Sync to iCloud</strong> on, then
+      reopen the app so it can rebuild the store with sync enabled. Your data then follows you to
+      your other devices signed into the same iCloud account.</p>
+
+      <p class="q">Can it remind me about quarterly taxes?</p>
+      <p class="a">Yes. In Settings, tap <strong>Add tax deadlines to Calendar</strong> and Freelance
+      Flow adds the four US quarterly estimated-tax dates to your calendar so they sync across your
+      devices.</p>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <p class="a">Freelance Flow collects no data and uses no tracking. Read the full policy here:
+      <a class="link" href="https://ryansan2001-source.github.io/freelance-finance-legal/">Privacy Policy</a>.</p>
+    </section>
+
+    <section style="border-bottom:none">
+      <p class="disclaimer">Freelance Flow provides rough tax-savings estimates for planning only and
+      is not a substitute for professional tax advice.</p>
+    </section>
+  </div>
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="https://ryansan2001-source.github.io/freelance-finance-legal/">Privacy</a>
+    <a href="mailto:rylumcgee@gmail.com">Email</a>
+  </footer>
+</body>
+</html>

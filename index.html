@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--
+  Freelance Flow landing page (single file, no build step).
+  Hand-written HTML + CSS so you can read and tweak it easily.
+  Structure:  <head> = meta/SEO + all styles  ·  <body> = the page sections.
+  To change a colour, edit the :root variables near the top of <style>.
+  Drop this whole folder into a GitHub Pages repo and it just works.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO basics: the title + description are what Google and link previews show -->
+  <title>Freelance Flow: Know exactly what to set aside for taxes</title>
+  <meta name="description" content="Freelance Flow is a private, on-device income & expense tracker for freelancers. It tells you exactly how much to set aside for taxes every month. Free, no account, no subscription." />
+
+  <!-- Social share preview (when the link is pasted into iMessage, Reddit, etc.) -->
+  <meta property="og:title" content="Freelance Flow: Know exactly what to set aside for taxes" />
+  <meta property="og:description" content="A private, on-device tracker for freelancers. Log income and expenses, and know your tax set-aside every month." />
+  <meta property="og:image" content="assets/icon.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/icon.png" />
+
+  <style>
+    /* ---- Colour + type tokens (pulled straight from the app's asset catalog) ---- */
+    :root{
+      --blue:#0f80f8;         /* AccentColor — primary brand tint */
+      --blue-deep:#0a63c8;    /* darker blue for button fills (white text passes WCAG AA) */
+      --blue-soft:#eef5ff;    /* faint blue wash for section backgrounds */
+      --cyan:#22c9fb;         /* splash-gradient cyan, used sparingly */
+      --income:#2fae7a;       /* green — income / profit */
+      --tax:#e79b3c;          /* orange — estimated tax */
+      --expense:#d1544a;      /* red — expenses */
+      --ink:#1b2430;          /* near-black text */
+      --muted:#5a6675;        /* secondary text */
+      --line:#e2e8f0;         /* hairline borders */
+      --bg:#ffffff;
+      --radius:18px;
+      --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font);
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+    /* ---- Top nav ---- */
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:19px}
+    .brand img{width:34px;height:34px;border-radius:9px}
+    .nav-links a{margin-left:22px;text-decoration:none;color:var(--muted);font-size:15px}
+    .nav-links a:hover{color:var(--ink)}
+
+    /* ---- Hero ---- */
+    .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;padding:56px 0 64px}
+    .hero h1{font-size:46px;line-height:1.1;letter-spacing:-0.02em;font-weight:700;margin-bottom:18px}
+    .hero p.sub{font-size:20px;color:var(--muted);margin-bottom:28px;max-width:34ch}
+    .hero-phone{display:flex;justify-content:center}
+    .hero-phone img{
+      width:100%;max-width:300px;border-radius:38px;
+      box-shadow:0 24px 60px rgba(15,128,248,0.20);
+      border:1px solid var(--line);
+    }
+
+    /* ---- Buttons ---- */
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .btn{
+      display:inline-block;background:var(--blue-deep);color:#fff;
+      text-decoration:none;font-weight:600;font-size:16px;
+      padding:14px 26px;border-radius:14px;transition:transform .08s ease,background .2s;
+    }
+    .btn:hover{background:#084f9f;transform:translateY(-1px)}
+    .btn.secondary{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue)}
+    .btn.secondary:hover{background:var(--blue-soft)}
+    .pricing-note{font-size:14px;color:var(--muted);margin-top:14px}
+
+    /* ---- Pillars ---- */
+    section.pillars{background:var(--blue-soft);padding:64px 0}
+    .section-head{text-align:center;max-width:40ch;margin:0 auto 44px}
+    .section-head h2{font-size:32px;letter-spacing:-0.01em;margin-bottom:10px}
+    .section-head p{color:var(--muted);font-size:17px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px}
+    .card .dot{width:38px;height:38px;border-radius:11px;background:var(--blue-soft);
+      display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
+    .card h3{font-size:18px;margin-bottom:8px}
+    .card p{font-size:15px;color:var(--muted)}
+
+    /* ---- Screenshot strip ---- */
+    section.shots{padding:72px 0}
+    .shots-row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:42px}
+    .shot{text-align:center}
+    .shot img{width:100%;max-width:260px;border-radius:26px;border:1px solid var(--line);
+      box-shadow:0 14px 36px rgba(0,0,0,0.07)}
+    .shot p{font-size:15px;color:var(--muted);margin-top:16px;max-width:26ch;margin-left:auto;margin-right:auto}
+
+    /* ---- Counter-position / why ---- */
+    section.why{background:#f8fafc;padding:64px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:760px;margin:38px auto 0}
+    .why-col{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+    .why-col h3{font-size:17px;margin-bottom:16px}
+    .why-col ul{list-style:none}
+    .why-col li{padding:7px 0 7px 26px;position:relative;font-size:15px;color:var(--muted)}
+    .why-col li::before{position:absolute;left:0;top:7px}
+    .why-col.them li::before{content:"–";color:#aab4c0}
+    .why-col.us li::before{content:"✓";color:var(--blue-deep);font-weight:700}
+
+    /* ---- Get it / email capture ---- */
+    section.signup{padding:72px 0;text-align:center}
+    .signup h2{font-size:30px;margin-bottom:12px}
+    .signup p{color:var(--muted);font-size:17px;max-width:44ch;margin:0 auto 26px}
+
+    /* ---- Disclaimer ---- */
+    .disclaimer{background:var(--blue-soft);border-radius:14px;max-width:720px;margin:0 auto;
+      padding:18px 22px;font-size:14px;color:var(--muted)}
+
+    /* ---- Footer ---- */
+    footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .foot-row a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .foot-row a:hover{color:var(--ink)}
+
+    /* ---- Mobile ---- */
+    @media(max-width:820px){
+      .hero{grid-template-columns:1fr;text-align:center;gap:32px;padding:36px 0}
+      .hero p.sub{margin-left:auto;margin-right:auto}
+      .cta-row{justify-content:center}
+      .grid3{grid-template-columns:1fr}
+      .shots-row{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+      .hero h1{font-size:36px}
+      /* On phones, hide the in-page jump links but keep Support reachable */
+      .nav-links a[href^="#"]{display:none}
+      .nav-links a{margin-left:0}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <nav>
+      <div class="brand"><img src="assets/icon.png" alt="Freelance Flow icon" />Freelance Flow</div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">Screens</a>
+        <a href="#why">Why</a>
+        <a href="#get">Get it</a>
+        <a href="support.html">Support</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div>
+        <h1>Know exactly what to set aside for taxes.</h1>
+        <p class="sub">Freelance Flow is a private, on-device tracker for freelancers and 1099 contractors. Log what you earn and spend, and see your monthly tax set-aside at a glance.</p>
+        <div class="cta-row">
+          <a class="btn" href="#get">Download on the App Store</a>
+          <a class="btn secondary" href="#how">See how it works</a>
+        </div>
+        <p class="pricing-note">Free · Private · No account · No subscription.</p>
+      </div>
+      <div class="hero-phone">
+        <img src="assets/screen-setaside.png" alt="Freelance Flow's Set Aside screen showing how much to move into a tax-savings account this month" />
+      </div>
+    </header>
+  </div>
+
+  <!-- PILLARS -->
+  <section class="pillars" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built for the way freelancers actually get paid</h2>
+        <p>No accountant, no spreadsheet gymnastics — just the numbers that keep you out of trouble at tax time.</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="dot">💸</div>
+          <h3>Your tax set-aside, every month</h3>
+          <p>Freelance Flow does the math: it tells you exactly how much of this month's income to move into a tax-savings account, right now.</p>
+        </div>
+        <div class="card">
+          <div class="dot">📊</div>
+          <h3>Your month at a glance</h3>
+          <p>Income, estimated tax, and real take-home on one clean screen. Adjust your tax rate and everything updates instantly.</p>
+        </div>
+        <div class="card">
+          <div class="dot">🧾</div>
+          <h3>Snap the receipt</h3>
+          <p>Attach a photo to any expense and Freelance Flow reads the amount and date for you — on device, no upload.</p>
+        </div>
+        <div class="card">
+          <div class="dot">👥</div>
+          <h3>See which clients pay off</h3>
+          <p>Tag income and expenses to a client and see true profit per client, so you know where your time is best spent.</p>
+        </div>
+        <div class="card">
+          <div class="dot">📆</div>
+          <h3>Ready for tax time</h3>
+          <p>A year-end summary by client and category, plus one-tap share or CSV export to hand straight to your accountant.</p>
+        </div>
+        <div class="card">
+          <div class="dot">🔒</div>
+          <h3>Private by design</h3>
+          <p>No account and no server of ours. Your data stays on your device, or syncs through your own private iCloud. We never see it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="shots" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>A calm, honest picture of your money</h2>
+        <p>Everything you need, nothing you don't.</p>
+      </div>
+      <div class="shots-row">
+        <div class="shot">
+          <img src="assets/screen-dashboard.png" alt="This Month dashboard: income, estimated tax, expenses, and take-home" />
+          <p>This month's income, tax, and real take-home — at a glance.</p>
+        </div>
+        <div class="shot">
+          <img src="assets/screen-setaside.png" alt="Set Aside screen with the amount to transfer and a tax-rate slider" />
+          <p>Know the exact amount to set aside for taxes right now.</p>
+        </div>
+        <div class="shot">
+          <img src="assets/screen-taxsummary.png" alt="Tax Time summary by client and category with export options" />
+          <p>A tax-time summary you can hand straight to your accountant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / COUNTER-POSITION -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Not another bloated accounting app</h2>
+        <p>Freelance Flow does the one thing spreadsheets and pricey accounting subscriptions make hard: tell you what to set aside, simply and privately.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-col them">
+          <h3>Spreadsheets &amp; big accounting apps</h3>
+          <ul>
+            <li>Formulas to build and break</li>
+            <li>Monthly subscriptions that add up</li>
+            <li>Accounts, logins, cloud dashboards</li>
+            <li>Built for businesses, not solo freelancers</li>
+          </ul>
+        </div>
+        <div class="why-col us">
+          <h3>Freelance Flow</h3>
+          <ul>
+            <li>Open it, log it, done in seconds</li>
+            <li>Free — no subscription</li>
+            <li>On-device and private, no account</li>
+            <li>Made for freelancers and 1099 contractors</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET IT / EMAIL CAPTURE -->
+  <section class="signup" id="get">
+    <div class="wrap">
+      <h2>Be the first to know when Freelance Flow launches</h2>
+      <p>Send me a quick email and I'll reply the moment Freelance Flow is on the App Store. No spam, no list, just one reply from me.</p>
+      <!--
+        Email signup is a plain mailto: link, no third-party service, nothing to break.
+        Tapping it opens the visitor's email app with the subject pre-filled.
+      -->
+      <a class="btn" href="mailto:rylumcgee@gmail.com?subject=Notify%20me%20when%20Freelance%20Flow%20launches&body=Hi%20Ryan%20%E2%80%94%20please%20let%20me%20know%20when%20Freelance%20Flow%20is%20live.%20Thanks!">Email me to get notified</a>
+      <p class="pricing-note">Free · Private · No account · No subscription.</p>
+      <div class="disclaimer" style="margin-top:34px">
+        Freelance Flow gives you a rough tax-savings estimate — a common freelancer rule of thumb — not tax advice. Check with a qualified tax professional or tax software if you're unsure.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot-row">
+      <div>© 2026 Freelance Flow · Made by one person, for freelancers.</div>
+      <div>
+        <a href="https://ryansan2001-source.github.io/freelance-finance-legal/">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="https://apps.apple.com/">App Store</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
