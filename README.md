@@ -18,7 +18,7 @@ freelance-flow-site/
 - **App Store buttons:** the "Download on the App Store" links point to
   `https://apps.apple.com/`. Swap in your real app URL once the listing is live.
 
-The email "Notify me" button is a plain `mailto:` to rylumcgee@gmail.com — nothing to
+The email "Notify me" button is a plain `mailto:` to developer.ryan.mcgee@icloud.com — nothing to
 configure.
 
 ## Screenshots
