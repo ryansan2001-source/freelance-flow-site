@@ -64,10 +64,11 @@
     .hero h1{font-size:46px;line-height:1.1;letter-spacing:-0.02em;font-weight:700;margin-bottom:18px}
     .hero p.sub{font-size:20px;color:var(--muted);margin-bottom:28px;max-width:34ch}
     .hero-phone{display:flex;justify-content:center}
-    .hero-phone img{
+    .hero-phone img,.hero-phone video{
       width:100%;max-width:300px;border-radius:38px;
       box-shadow:0 24px 60px rgba(15,128,248,0.20);
       border:1px solid var(--line);
+      display:block;
     }
 
     /* ---- Buttons ---- */
@@ -169,7 +170,13 @@
         <p class="pricing-note">Private · No account · Free 7-day trial</p>
       </div>
       <div class="hero-phone">
-        <img src="assets/screen-setaside.png" alt="Freelance Flow's Set Aside screen showing how much to move into a tax-savings account this month" />
+        <!-- Apple-provided app preview clip. Autoplays muted & loops; falls back to the poster image where autoplay is blocked. -->
+        <video
+          src="assets/preview.mp4"
+          poster="assets/preview-poster.jpg"
+          autoplay muted loop playsinline
+          aria-label="Freelance Flow app preview video">
+        </video>
       </div>
     </header>
   </div>

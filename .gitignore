@@ -1,3 +1,6 @@
 .DS_Store
 *.log
 .claude/
+
+# Original Apple-provided HEVC preview (kept locally; the web-ready H.264 lives in assets/preview.mp4)
+Freelance Flow Tax & Income (New iOS App).mp4
