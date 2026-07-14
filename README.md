@@ -4,6 +4,13 @@ The marketing + support site for **Freelance Flow** — a private, on-device tax
 tracker for freelancers. Plain static HTML/CSS: no build step, no framework. Hosted free
 on GitHub Pages.
 
+**Pricing (as of the StoreKit paywall added July 2026):** 7-day free trial, then $4.99/mo
+or $29.99/yr, or a one-time $59.99 Lifetime purchase — no free tier. See
+`../Freelance Finance/monetization-plan.md` for the full reasoning. `index.html` was
+updated to match; if you change pricing again, update the 3 spots in `index.html` that
+mention price (`pricing-note` under the hero, the "why" comparison list, and the
+signup section's `pricing-note`).
+
 ## Files
 ```
 freelance-flow-site/
@@ -14,12 +21,9 @@ freelance-flow-site/
   .nojekyll             Tells GitHub Pages to serve files as-is (don't run Jekyll)
 ```
 
-## Before you publish — one quick edit in `index.html`
-- **App Store buttons:** the "Download on the App Store" links point to
-  `https://apps.apple.com/`. Swap in your real app URL once the listing is live.
-
-The email "Notify me" button is a plain `mailto:` to developer.ryan.mcgee@icloud.com — nothing to
-configure.
+## App Store link
+The "Download on the App Store" buttons point to the live listing:
+`https://apps.apple.com/us/app/freelance-flow-tax-income/id6787905548`.
 
 ## Screenshots
 
