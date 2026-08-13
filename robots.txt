@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ryansan2001-source.github.io/freelance-flow-site/sitemap.xml

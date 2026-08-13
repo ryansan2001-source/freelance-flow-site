@@ -13,15 +13,48 @@
 
   <!-- SEO basics: the title + description are what Google and link previews show -->
   <title>Freelance Flow: Know exactly what to set aside for taxes</title>
-  <meta name="description" content="Freelance Flow is a private, on-device income & expense tracker for freelancers. It tells you exactly how much to set aside for taxes every month. Try it free for 7 days, then $4.99/mo, $29.99/yr, or buy once for $59.99 — no account required." />
+  <meta name="description" content="Freelance Flow is a private, on-device income & expense tracker for freelancers. It tells you exactly how much to set aside for taxes every month. Try it free for 7 days, then $4.99/mo, $29.99/yr, or buy once for $39.99 — no account required." />
+  <meta name="theme-color" content="#0f80f8" />
+  <link rel="canonical" href="https://ryansan2001-source.github.io/freelance-flow-site/" />
 
   <!-- Social share preview (when the link is pasted into iMessage, Reddit, etc.) -->
   <meta property="og:title" content="Freelance Flow: Know exactly what to set aside for taxes" />
   <meta property="og:description" content="A private, on-device tracker for freelancers. Log income and expenses, and know your tax set-aside every month. Free 7-day trial." />
-  <meta property="og:image" content="assets/icon.png" />
+  <meta property="og:image" content="https://ryansan2001-source.github.io/freelance-flow-site/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Freelance Flow — know exactly what to set aside for taxes" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ryansan2001-source.github.io/freelance-flow-site/" />
+  <meta property="og:site_name" content="Freelance Flow" />
+
+  <!-- Twitter/X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Freelance Flow: Know exactly what to set aside for taxes" />
+  <meta name="twitter:description" content="A private, on-device tracker for freelancers. Log income and expenses, and know your tax set-aside every month. Free 7-day trial." />
+  <meta name="twitter:image" content="https://ryansan2001-source.github.io/freelance-flow-site/assets/og-image.png" />
 
   <link rel="icon" href="assets/icon.png" />
+
+  <!-- Structured data: helps Google understand this is an iOS app + its pricing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Freelance Flow",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS 18.0 or later",
+    "description": "A private, on-device income & expense tracker for freelancers and 1099 contractors that tells you exactly how much to set aside for taxes each month.",
+    "url": "https://ryansan2001-source.github.io/freelance-flow-site/",
+    "image": "https://ryansan2001-source.github.io/freelance-flow-site/assets/og-image.png",
+    "downloadUrl": "https://apps.apple.com/us/app/freelance-flow-tax-income/id6787905548",
+    "offers": [
+      { "@type": "Offer", "price": "4.99", "priceCurrency": "USD", "description": "Monthly subscription (after a 7-day free trial)" },
+      { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "description": "Annual subscription (after a 7-day free trial)" },
+      { "@type": "Offer", "price": "39.99", "priceCurrency": "USD", "description": "Lifetime — one-time purchase, no subscription" }
+    ]
+  }
+  </script>
 
   <style>
     /* ---- Colour + type tokens (pulled straight from the app's asset catalog) ---- */
@@ -232,19 +265,19 @@
       </div>
       <div class="shots-row">
         <div class="shot">
-          <img src="assets/screen-dashboard.png" alt="This Month dashboard: income, estimated tax, expenses, and take-home" />
+          <img src="assets/screen-dashboard.png" width="640" height="1390" loading="lazy" decoding="async" alt="This Month dashboard: income, estimated tax, expenses, and take-home" />
           <p>This month's income, tax, and real take-home — at a glance.</p>
         </div>
         <div class="shot">
-          <img src="assets/screen-ai.png" alt="Ask your finances: an on-device assistant answering 'What's my estimated tax this quarter?'" />
+          <img src="assets/screen-ai.png" width="640" height="1390" loading="lazy" decoding="async" alt="Ask your finances: an on-device assistant answering 'What's my estimated tax this quarter?'" />
           <p>Ask a question, get a straight answer — entirely on-device.</p>
         </div>
         <div class="shot">
-          <img src="assets/screen-setaside.png" alt="Set Aside screen with the amount to transfer and a tax-rate slider" />
+          <img src="assets/screen-setaside.png" width="640" height="1390" loading="lazy" decoding="async" alt="Set Aside screen with the amount to transfer and a tax-rate slider" />
           <p>Know the exact amount to set aside for taxes right now.</p>
         </div>
         <div class="shot">
-          <img src="assets/screen-taxsummary.png" alt="Tax Time summary by client and category with export options" />
+          <img src="assets/screen-taxsummary.png" width="640" height="1390" loading="lazy" decoding="async" alt="Tax Time summary by client and category with export options" />
           <p>A tax-time summary you can hand straight to your accountant.</p>
         </div>
       </div>
@@ -287,7 +320,7 @@
       <h2>Get Freelance Flow on the App Store</h2>
       <p>Log what you earn and spend, and know exactly what to set aside for taxes — private, on-device, no account.</p>
       <a class="btn" href="https://apps.apple.com/us/app/freelance-flow-tax-income/id6787905548">Download on the App Store</a>
-      <p class="pricing-note">Private · No account · Free 7-day trial, then $4.99/mo or $29.99/yr — or buy once for $59.99, no subscription ever.</p>
+      <p class="pricing-note">Private · No account · Free 7-day trial, then $4.99/mo or $29.99/yr — or buy once for $39.99, no subscription ever.</p>
       <div class="disclaimer" style="margin-top:34px">
         Freelance Flow gives you a rough tax-savings estimate — a common freelancer rule of thumb — not tax advice. Check with a qualified tax professional or tax software if you're unsure.
       </div>
